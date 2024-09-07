@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
     <PackageId>EmptyKeys.UserInterface.MonoGame</PackageId>
     <Description>MonoGame Library for Empty Keys UI</Description>
     <Product>EmptyKeys.UserInterface.MonoGame</Product>
@@ -46,13 +46,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EmptyKeys.UserInterface.Core\EmptyKeys.UserInterface.Core.Standard.csproj" />
+    <PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.8.2.1105" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="MonoGame.Framework">
-      <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\EmptyKeys.UserInterface.Core\EmptyKeys.UserInterface.Core.Standard.csproj" />
   </ItemGroup>
 
 </Project>

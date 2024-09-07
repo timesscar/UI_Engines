@@ -6,7 +6,7 @@
     <SccLocalPath>.</SccLocalPath>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>EmptyKeys.UserInterface.Xenko</RootNamespace>
     <Version>3.1.0</Version>
     <Copyright>Copyright © 2018 Empty Keys, Filip Dušek</Copyright>
@@ -15,7 +15,7 @@
     <Description>Empty Keys UI Xenko engine library</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xenko" Version="3.0.0.5">
+    <PackageReference Include="Xenko" Version="3.1.0.2">
       <PrivateAssets>contentfiles;analyzers</PrivateAssets>
     </PackageReference>
   </ItemGroup>  

@@ -46,7 +46,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return false;
                 }
@@ -65,7 +65,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return false;
                 }
@@ -84,7 +84,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return false;
                 }
@@ -103,7 +103,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return false;
                 }
@@ -122,7 +122,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return new PointF();
                 }
@@ -164,7 +164,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return false;
                 }
@@ -183,7 +183,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return false;
                 }
@@ -202,7 +202,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return new PointF();
                 }
@@ -221,7 +221,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return 0;
                 }
@@ -240,7 +240,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return 0;
                 }
@@ -259,7 +259,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return false;
                 }
@@ -278,7 +278,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return false;
                 }
@@ -297,7 +297,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return new PointF();
                 }
@@ -316,7 +316,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return 0;
                 }
@@ -335,7 +335,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return false;
                 }
@@ -354,7 +354,7 @@ namespace EmptyKeys.UserInterface.Input
         {
             get
             {
-                if (state == null)
+                if (state == default)
                 {
                     return false;
                 }

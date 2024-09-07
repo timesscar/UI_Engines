@@ -121,8 +121,8 @@ namespace EmptyKeys.UserInterface.Media
             GradientSpreadMethod spread, bool isBorder)
         {
             Color[] data = new Color[Width * Height];
-            Color startColor = Color.TransparentBlack;
-            Color endColor = Color.TransparentBlack;
+            Color startColor = Color.Transparent;
+            Color endColor = Color.Transparent;
             PointF point = new PointF();
             float length = GetLength(lineStart, lineEnd);
 
@@ -190,9 +190,9 @@ namespace EmptyKeys.UserInterface.Media
                         }
 
                         GradientStop startStop = GetStartStop(finalOffset, sortedStops);
-                        startColor = startStop != null ? new Color { PackedValue = startStop.Color.PackedValue } : Color.TransparentBlack;
+                        startColor = startStop != null ? new Color { PackedValue = startStop.Color.PackedValue } : Color.Transparent;
                         GradientStop endStop = GetEndStop(finalOffset, sortedStops, spread);
-                        endColor = endStop != null ? new Color { PackedValue = endStop.Color.PackedValue } : Color.TransparentBlack;
+                        endColor = endStop != null ? new Color { PackedValue = endStop.Color.PackedValue } : Color.Transparent;
                         if (endStop != null && startStop != null)
                         {
                             finalOffset = (finalOffset - startStop.Offset) * (1f / (endStop.Offset - startStop.Offset));
@@ -213,7 +213,7 @@ namespace EmptyKeys.UserInterface.Media
                     }
                     else
                     {
-                        data[index] = Color.TransparentBlack;
+                        data[index] = Color.Transparent;
                     }
 
                     index++;
