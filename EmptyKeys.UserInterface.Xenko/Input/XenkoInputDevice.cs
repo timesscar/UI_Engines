@@ -1,27 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xenko.Input;
+﻿using Stride.Input;
 
 namespace EmptyKeys.UserInterface.Input
 {
     /// <summary>
-    /// Implements Xenko specific input device
+    /// Implements Stride specific input device
     /// </summary>
-    public class XenkoInputDevice : InputDeviceBase
+    public class StrideInputDevice : InputDeviceBase
     {
-        public static Xenko.Input.InputManager NativeInputManager
+        public static Stride.Input.InputManager NativeInputManager
         {
             get;
             set;
         }
 
-        private MouseStateBase mouseState = new XenkoMouseState();
-        private GamePadStateBase gamePadState = new XenkoGamePadState();
-        private KeyboardStateBase keyboardState = new XenkoKeyboardState();
-        private TouchStateBase touchState = new XenkoTouchState();
+        private MouseStateBase mouseState = new StrideMouseState();
+        private GamePadStateBase gamePadState = new StrideGamePadState();
+        private KeyboardStateBase keyboardState = new StrideKeyboardState();
+        private TouchStateBase touchState = new StrideTouchState();
 
         /// <summary>
         /// Gets the state of the mouse.
@@ -68,9 +63,9 @@ namespace EmptyKeys.UserInterface.Input
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="XenkoInputDevice"/> class.
+        /// Initializes a new instance of the <see cref="StrideInputDevice"/> class.
         /// </summary>
-        public XenkoInputDevice()
+        public StrideInputDevice()
             : base()
         {
             NativeInputManager.Gestures.Add(new GestureConfigDrag());

@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <PackageId>EmptyKeys.UserInterface.Core</PackageId>
     <Description>Core library for Empty Keys UI</Description>
     <Product>EmptyKeys.UserInterface.Core</Product>

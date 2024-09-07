@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EmptyKeys.UserInterface.Media
+﻿namespace EmptyKeys.UserInterface.Media
 {
     /// <summary>
-    /// Implements Xenko specific audio device
+    /// Implements Stride specific audio device
     /// </summary>
-    public class XenkoAudioDevice : AudioDevice
+    public class StrideAudioDevice : AudioDevice
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="XenkoAudioDevice"/> class.
+        /// Initializes a new instance of the <see cref="StrideAudioDevice"/> class.
         /// </summary>
-        public XenkoAudioDevice()
+        public StrideAudioDevice()
             : base()
         {
         }
@@ -26,7 +20,7 @@ namespace EmptyKeys.UserInterface.Media
         /// <returns></returns>
         public override SoundBase CreateSound(object nativeSound)
         {
-            return new XenkoSound(nativeSound);
+            return new StrideSound(nativeSound);
         }
     }
 }

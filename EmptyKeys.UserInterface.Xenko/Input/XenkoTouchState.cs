@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using Xenko.Core.Mathematics;
-using Xenko.Input;
+﻿using Stride.Core.Mathematics;
+using Stride.Input;
 
 namespace EmptyKeys.UserInterface.Input
 {
     /// <summary>
-    /// Implements Xenko specific touch state
+    /// Implements Stride specific touch state
     /// </summary>
-    public class XenkoTouchState : TouchStateBase
+    public class StrideTouchState : TouchStateBase
     {
         private float normalizedX;
         private float normalizedY;
@@ -132,7 +127,7 @@ namespace EmptyKeys.UserInterface.Input
             isTouched = false;
             hasGesture = false;
 
-            Xenko.Input.InputManager manager = XenkoInputDevice.NativeInputManager;
+            Stride.Input.InputManager manager = StrideInputDevice.NativeInputManager;
 
             if (manager.PointerEvents.Count > 0)
             {

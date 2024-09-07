@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using Xenko.Core.Mathematics;
-
-namespace EmptyKeys.UserInterface.Input
+﻿namespace EmptyKeys.UserInterface.Input
 {
     /// <summary>
-    /// Implements Xenko specific mouse state
+    /// Implements Stride specific mouse state
     /// </summary>
-    public class XenkoMouseState : MouseStateBase
+    public class StrideMouseState : MouseStateBase
     {        
         private int scrollWheelValue;
 
@@ -22,7 +15,7 @@ namespace EmptyKeys.UserInterface.Input
         /// </value>
         public override bool IsLeftButtonPressed
         {
-            get { return XenkoInputDevice.NativeInputManager.IsMouseButtonDown(Xenko.Input.MouseButton.Left); }
+            get { return StrideInputDevice.NativeInputManager.IsMouseButtonDown(Stride.Input.MouseButton.Left); }
         }
 
         /// <summary>
@@ -33,7 +26,7 @@ namespace EmptyKeys.UserInterface.Input
         /// </value>
         public override bool IsMiddleButtonPressed
         {
-            get { return XenkoInputDevice.NativeInputManager.IsMouseButtonDown(Xenko.Input.MouseButton.Middle); }
+            get { return StrideInputDevice.NativeInputManager.IsMouseButtonDown(Stride.Input.MouseButton.Middle); }
         }
 
         /// <summary>
@@ -44,7 +37,7 @@ namespace EmptyKeys.UserInterface.Input
         /// </value>
         public override bool IsRightButtonPressed
         {
-            get { return XenkoInputDevice.NativeInputManager.IsMouseButtonDown(Xenko.Input.MouseButton.Right); }
+            get { return StrideInputDevice.NativeInputManager.IsMouseButtonDown(Stride.Input.MouseButton.Right); }
         }
 
         /// <summary>
@@ -55,7 +48,7 @@ namespace EmptyKeys.UserInterface.Input
         /// </value>
         public override float NormalizedX
         {
-            get { return XenkoInputDevice.NativeInputManager.MousePosition.X; }
+            get { return StrideInputDevice.NativeInputManager.MousePosition.X; }
         }
 
         /// <summary>
@@ -66,7 +59,7 @@ namespace EmptyKeys.UserInterface.Input
         /// </value>
         public override float NormalizedY
         {
-            get { return XenkoInputDevice.NativeInputManager.MousePosition.Y; }
+            get { return StrideInputDevice.NativeInputManager.MousePosition.Y; }
         }
 
         /// <summary>
@@ -112,7 +105,7 @@ namespace EmptyKeys.UserInterface.Input
         /// </summary>
         public override void Update()
         {            
-            scrollWheelValue += (int)XenkoInputDevice.NativeInputManager.MouseWheelDelta;
+            scrollWheelValue += (int)StrideInputDevice.NativeInputManager.MouseWheelDelta;
         }
     }
 }

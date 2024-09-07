@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EmptyKeys.UserInterface.Renderers;
-using Xenko.Core.Mathematics;
-using Xenko.Graphics;
-using Texture2D = Xenko.Graphics.Texture;
+using Stride.Core.Mathematics;
+using Texture2D = Stride.Graphics.Texture;
 
 namespace EmptyKeys.UserInterface.Media
 {
-    public class XenkoTexture : TextureBase
+    public class StrideTexture : TextureBase
     {
         private Texture2D texture;
 
@@ -52,7 +48,7 @@ namespace EmptyKeys.UserInterface.Media
         /// Initializes a new instance of the <see cref="MonoGameTexture"/> class.
         /// </summary>
         /// <param name="nativeTexture">The native texture.</param>
-        public XenkoTexture(object nativeTexture)
+        public StrideTexture(object nativeTexture)
             : base(nativeTexture)
         {
             texture = nativeTexture as Texture2D;
@@ -77,7 +73,7 @@ namespace EmptyKeys.UserInterface.Media
                 return;
             }
             
-            texture.SetData<Color>(XenkoRenderer.GraphicsContext.CommandList, new Color[] { Color.White });
+            texture.SetData<Color>(StrideRenderer.GraphicsContext.CommandList, new Color[] { Color.White });
         }
 
         /// <summary>
@@ -104,7 +100,7 @@ namespace EmptyKeys.UserInterface.Media
                 }
             }
 
-            texture.SetData<Color>(XenkoRenderer.GraphicsContext.CommandList, data);
+            texture.SetData<Color>(StrideRenderer.GraphicsContext.CommandList, data);
         }
 
         /// <summary>
@@ -220,7 +216,7 @@ namespace EmptyKeys.UserInterface.Media
                 }
             }
 
-            texture.SetData<Color>(XenkoRenderer.GraphicsContext.CommandList, data);
+            texture.SetData<Color>(StrideRenderer.GraphicsContext.CommandList, data);
         }        
 
         private static float GetLength(PointF start, PointF end)
@@ -306,7 +302,7 @@ namespace EmptyKeys.UserInterface.Media
                 }
             }
 
-            texture.SetData<Color>(XenkoRenderer.GraphicsContext.CommandList, data);
+            texture.SetData<Color>(StrideRenderer.GraphicsContext.CommandList, data);
         }
 
         /// <summary>
@@ -371,7 +367,7 @@ namespace EmptyKeys.UserInterface.Media
                 }
             }
 
-            texture.SetData<Color>(XenkoRenderer.GraphicsContext.CommandList, data);
+            texture.SetData<Color>(StrideRenderer.GraphicsContext.CommandList, data);
         }
 
         /// <summary>
@@ -392,7 +388,7 @@ namespace EmptyKeys.UserInterface.Media
                 buffer[i] = new Color(data[i]);
             }
 
-            texture.SetData<Color>(XenkoRenderer.GraphicsContext.CommandList, buffer);
+            texture.SetData<Color>(StrideRenderer.GraphicsContext.CommandList, buffer);
         }
 
         /// <summary>

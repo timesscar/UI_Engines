@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace EmptyKeys.UserInterface.Media
+﻿namespace EmptyKeys.UserInterface.Media
 {
     /// <summary>
     /// Implements abstract Effect

@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using EmptyKeys.UserInterface.Renderers;
-using Xenko.Core;
-using Xenko.Core.Mathematics;
-using Xenko.Graphics;
-using Xenko.Rendering;
-using VertexBuffer = Xenko.Graphics.Buffer;
+using Stride.Core.Mathematics;
+using Stride.Graphics;
+using Stride.Rendering;
+using VertexBuffer = Stride.Graphics.Buffer;
 
 namespace EmptyKeys.UserInterface.Media
 {
-    public class XenkoGeometryBuffer : GeometryBuffer
+    public class StrideGeometryBuffer : GeometryBuffer
     {
         private readonly EffectInstance effect;                  
 
@@ -55,13 +50,13 @@ namespace EmptyKeys.UserInterface.Media
         public InputElementDescription[] InputElementDescriptions { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="XenkoGeometryBuffer"/> class.
+        /// Initializes a new instance of the <see cref="StrideGeometryBuffer"/> class.
         /// </summary>
-        public XenkoGeometryBuffer()
+        public StrideGeometryBuffer()
             : base()
         {
-            effect = new EffectInstance(new Effect(XenkoRenderer.GraphicsDevice, SpriteEffect.Bytecode));
-            effect.UpdateEffect(XenkoRenderer.GraphicsDevice);
+            effect = new EffectInstance(new Effect(StrideRenderer.GraphicsDevice, SpriteEffect.Bytecode));
+            effect.UpdateEffect(StrideRenderer.GraphicsDevice);
         }
 
         /// <summary>
@@ -79,7 +74,7 @@ namespace EmptyKeys.UserInterface.Media
                 vertex[i] = new VertexPositionNormalTexture(new Vector3(points[i].X, points[i].Y, 0), new Vector3(0, 0, 1), Vector2.Zero);
             }
 
-            VertexBuffer = VertexBuffer.Vertex.New(XenkoRenderer.GraphicsDevice, vertex);
+            VertexBuffer = VertexBuffer.Vertex.New(StrideRenderer.GraphicsDevice, vertex);
             VertexBuffer.Reload = (graphicsResource) => ((VertexBuffer)graphicsResource).Recreate(vertex);
             VertexBufferBinding = new VertexBufferBinding(VertexBuffer, VertexPositionNormalTexture.Layout, vertex.Length, VertexPositionNormalTexture.Size);
             InputElementDescriptions = VertexBufferBinding.Declaration.CreateInputElements();
@@ -126,7 +121,7 @@ namespace EmptyKeys.UserInterface.Media
                 vertex[i] = new VertexPositionNormalTexture(new Vector3(points[i].X, points[i].Y, 0), new Vector3(0,0,1), uv);
             }
 
-            VertexBuffer = VertexBuffer.Vertex.New(XenkoRenderer.GraphicsDevice, vertex);
+            VertexBuffer = VertexBuffer.Vertex.New(StrideRenderer.GraphicsDevice, vertex);
             VertexBuffer.Reload = (graphicsResource) => ((VertexBuffer)graphicsResource).Recreate(vertex);
             VertexBufferBinding = new VertexBufferBinding(VertexBuffer, VertexPositionNormalTexture.Layout, vertex.Length, VertexPositionNormalTexture.Size);
             InputElementDescriptions = VertexBufferBinding.Declaration.CreateInputElements();

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Stride.Core.Mathematics;
+using Stride.Graphics;
 using System.Text;
-using System.Threading.Tasks;
-using Xenko.Core.Mathematics;
-using Xenko.Graphics;
 
 namespace EmptyKeys.UserInterface.Media
 {
-    public class XenkoFont : FontBase
+    public class StrideFont : FontBase
     {
         private SpriteFont font;
 
@@ -80,7 +76,7 @@ namespace EmptyKeys.UserInterface.Media
         /// Initializes a new instance of the <see cref="MonoGameFont" /> class.
         /// </summary>
         /// <param name="nativeFont">The native font.</param>
-        public XenkoFont(object nativeFont)
+        public StrideFont(object nativeFont)
             : base(nativeFont)
         {
             font = nativeFont as SpriteFont;

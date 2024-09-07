@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using EmptyKeys.UserInterface.Media;
-using Xenko.Core.Mathematics;
-using Xenko.Games;
-using Xenko.Graphics;
-using Xenko.Rendering;
-using Texture2D = Xenko.Graphics.Texture;
+using Stride.Core.Mathematics;
+using Stride.Games;
+using Stride.Graphics;
+using Stride.Rendering;
+using Texture2D = Stride.Graphics.Texture;
 
 namespace EmptyKeys.UserInterface.Renderers
 {
-    public class XenkoRenderer : Renderer
+    public class StrideRenderer : Renderer
     {
         private static GraphicsDeviceManager manager;
         private static GraphicsContext graphicsContext;
@@ -67,7 +63,7 @@ namespace EmptyKeys.UserInterface.Renderers
         private Stack<EffectInstance> activeEffects;
         private EffectInstance currentActiveEffect;
         private EffectSystem effectSystem;
-        private XenkoEffect sdfFontEffect;
+        private StrideEffect sdfFontEffect;
 
         private bool isSpriteRenderInProgress;
         private bool isClipped;
@@ -88,10 +84,10 @@ namespace EmptyKeys.UserInterface.Renderers
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="XenkoRenderer"/> class.
+        /// Initializes a new instance of the <see cref="StrideRenderer"/> class.
         /// </summary>
         /// <param name="graphicsDeviceManager">The graphics device manager.</param>
-        public XenkoRenderer(GraphicsDeviceManager graphicsDeviceManager, EffectSystem effectSystem)
+        public StrideRenderer(GraphicsDeviceManager graphicsDeviceManager, EffectSystem effectSystem)
             : base()
         {
             manager = graphicsDeviceManager;
@@ -384,7 +380,7 @@ namespace EmptyKeys.UserInterface.Renderers
                 return null;
             }
 
-            return new XenkoTexture(nativeTexture);
+            return new StrideTexture(nativeTexture);
         }
 
         /// <summary>
@@ -412,7 +408,7 @@ namespace EmptyKeys.UserInterface.Renderers
                 native = Texture2D.New2D(GraphicsDevice, width, height, PixelFormat.R8G8B8A8_UNorm);
             }
 
-            XenkoTexture texture = new XenkoTexture(native);
+            StrideTexture texture = new StrideTexture(native);
             return texture;
         }
 
@@ -422,7 +418,7 @@ namespace EmptyKeys.UserInterface.Renderers
         /// <returns></returns>
         public override GeometryBuffer CreateGeometryBuffer()
         {
-            return new XenkoGeometryBuffer();
+            return new StrideGeometryBuffer();
         }
 
         /// <summary>
@@ -435,11 +431,11 @@ namespace EmptyKeys.UserInterface.Renderers
         /// <param name="depth">The depth.</param>
         public override void DrawGeometryColor(GeometryBuffer buffer, PointF position, ColorW color, float opacity, float depth)
         {
-            XenkoGeometryBuffer xenkoBuffer = buffer as XenkoGeometryBuffer;
+            StrideGeometryBuffer StrideBuffer = buffer as StrideGeometryBuffer;
 
             Color4 nativeColor = new Color4(color.PackedValue) * opacity;
-            xenkoBuffer.EffectInstance.Parameters.Set(SpriteEffectKeys.Color, nativeColor);
-            xenkoBuffer.EffectInstance.Parameters.Set(TexturingKeys.Texture0, GraphicsDevice.GetSharedWhiteTexture());
+            StrideBuffer.EffectInstance.Parameters.Set(SpriteEffectKeys.Color, nativeColor);
+            StrideBuffer.EffectInstance.Parameters.Set(TexturingKeys.Texture0, GraphicsDevice.GetSharedWhiteTexture());
             DrawGeometry(buffer, position, depth);
         }
 
@@ -453,7 +449,7 @@ namespace EmptyKeys.UserInterface.Renderers
         /// <param name="depth">The depth.</param>
         public override void DrawGeometryTexture(GeometryBuffer buffer, PointF position, TextureBase texture, float opacity, float depth)
         {
-            XenkoGeometryBuffer paradoxBuffer = buffer as XenkoGeometryBuffer;
+            StrideGeometryBuffer paradoxBuffer = buffer as StrideGeometryBuffer;
             Texture2D nativeTexture = texture.GetNativeTexture() as Texture2D;
             paradoxBuffer.EffectInstance.Parameters.Set(SpriteEffectKeys.Color, Color.White * opacity);
             paradoxBuffer.EffectInstance.Parameters.Set(TexturingKeys.Texture0, nativeTexture);
@@ -480,13 +476,13 @@ namespace EmptyKeys.UserInterface.Renderers
             Matrix world = Matrix.Translation(position.X, position.Y, 0);            
 
             Matrix worldView;
-            Matrix.MultiplyTo(ref world, ref view, out worldView);
+            Matrix.Multiply(ref world, ref view, out worldView);
             
             Matrix worldViewProjection;
             UpdateProjection(graphicsContext.CommandList);
-            Matrix.MultiplyTo(ref worldView, ref projection, out worldViewProjection);            
+            Matrix.Multiply(ref worldView, ref projection, out worldViewProjection);            
 
-            XenkoGeometryBuffer paradoxBuffer = buffer as XenkoGeometryBuffer;            
+            StrideGeometryBuffer paradoxBuffer = buffer as StrideGeometryBuffer;            
             paradoxBuffer.EffectInstance.Parameters.Set(SpriteBaseKeys.MatrixTransform, worldViewProjection);            
             
             if (isClipped)
@@ -548,7 +544,7 @@ namespace EmptyKeys.UserInterface.Renderers
         /// <returns></returns>
         public override FontBase CreateFont(object nativeFont)
         {
-            return new XenkoFont(nativeFont);
+            return new StrideFont(nativeFont);
         }
 
         /// <summary>
@@ -589,7 +585,7 @@ namespace EmptyKeys.UserInterface.Renderers
         /// <returns></returns>
         public override EffectBase CreateEffect(object nativeEffect)
         {
-            return new XenkoEffect(nativeEffect, null);
+            return new StrideEffect(nativeEffect, null);
         }
 
         /// <summary>
@@ -608,7 +604,7 @@ namespace EmptyKeys.UserInterface.Renderers
                     parameters.Set<Color4>(SDFFontShaderKeys.BorderColor, Color4.Black);
                     parameters.Set<float>(SDFFontShaderKeys.BorderThickness, 0f);
 
-                    sdfFontEffect = new XenkoEffect(effect, parameters);
+                    sdfFontEffect = new StrideEffect(effect, parameters);
                 }
             }
 

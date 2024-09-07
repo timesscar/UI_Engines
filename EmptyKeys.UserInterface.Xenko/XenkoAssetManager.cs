@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EmptyKeys.UserInterface.Media;
-using Xenko.Core.Serialization.Contents;
-using Xenko.Audio;
-using Xenko.Graphics;
-using Xenko.Rendering;
+﻿using EmptyKeys.UserInterface.Media;
+using Stride.Audio;
+using Stride.Core.Serialization.Contents;
+using Stride.Graphics;
+using Stride.Rendering;
 
 namespace EmptyKeys.UserInterface
 {
-    public class XenkoAssetManager : AssetManager
+    public class StrideAssetManager : AssetManager
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="XenkoAssetManager"/> class.
+        /// Initializes a new instance of the <see cref="StrideAssetManager"/> class.
         /// </summary>
-        public XenkoAssetManager()
+        public StrideAssetManager()
             : base()
         {
         }

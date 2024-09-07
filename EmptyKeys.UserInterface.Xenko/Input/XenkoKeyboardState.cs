@@ -1,23 +1,19 @@
-﻿using System;
+﻿using Stride.Input;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using Xenko.Input;
 
 namespace EmptyKeys.UserInterface.Input
 {
     /// <summary>
-    /// Implements Xenko specific keyboard state
+    /// Implements Stride specific keyboard state
     /// </summary>
-    public class XenkoKeyboardState : KeyboardStateBase
+    public class StrideKeyboardState : KeyboardStateBase
     {
         private Dictionary<int, int> translationTable = new Dictionary<int, int>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="XenkoKeyboardState"/> class.
+        /// Initializes a new instance of the <see cref="StrideKeyboardState"/> class.
         /// </summary>
-        public XenkoKeyboardState()
+        public StrideKeyboardState()
             : base()
         {
             translationTable.Add(8, 2);
@@ -92,7 +88,7 @@ namespace EmptyKeys.UserInterface.Input
                                         }
                                     }
 
-            return XenkoInputDevice.NativeInputManager.IsKeyDown(key);
+            return StrideInputDevice.NativeInputManager.IsKeyDown(key);
         }
 
         /// <summary>

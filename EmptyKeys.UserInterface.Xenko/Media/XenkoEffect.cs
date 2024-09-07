@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xenko.Graphics;
-using Xenko.Rendering;
+﻿using Stride.Rendering;
+using Stride.Graphics;
 
 namespace EmptyKeys.UserInterface.Media
 {
     /// <summary>
-    /// Implements Xenko specific effect class
+    /// Implements Stride specific effect class
     /// </summary>
     /// <seealso cref="EmptyKeys.UserInterface.Media.EffectBase" />
-    public class XenkoEffect : EffectBase
+    public class StrideEffect : EffectBase
     {
         private Effect effect;
         private EffectInstance instance;
@@ -26,11 +21,11 @@ namespace EmptyKeys.UserInterface.Media
         public ParameterCollection Parameters { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="XenkoEffect"/> class.
+        /// Initializes a new instance of the <see cref="StrideEffect"/> class.
         /// </summary>
         /// <param name="nativeEffect">The native effect.</param>
         /// <param name="parameters">The parameters.</param>
-        public XenkoEffect(object nativeEffect, ParameterCollection parameters) : base(nativeEffect)
+        public StrideEffect(object nativeEffect, ParameterCollection parameters) : base(nativeEffect)
         {
             Parameters = parameters;
             if (Parameters == null)

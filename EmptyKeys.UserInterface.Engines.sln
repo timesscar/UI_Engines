@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmptyKeys.UserInterface.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmptyKeys.UserInterface.MonoGame.Standard", "EmptyKeys.UserInterface.MonoGame\EmptyKeys.UserInterface.MonoGame.Standard.csproj", "{09E71291-BE21-4B01-B10B-80B777E1BFAF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmptyKeys.UserInterface.Stride", "EmptyKeys.UserInterface.Xenko\EmptyKeys.UserInterface.Stride.csproj", "{72275BAC-75C1-49DA-A1AA-86328EBE8DD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,14 @@ Global
 		{09E71291-BE21-4B01-B10B-80B777E1BFAF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09E71291-BE21-4B01-B10B-80B777E1BFAF}.Release|x86.ActiveCfg = Release|Any CPU
 		{09E71291-BE21-4B01-B10B-80B777E1BFAF}.Release|x86.Build.0 = Release|Any CPU
+		{72275BAC-75C1-49DA-A1AA-86328EBE8DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72275BAC-75C1-49DA-A1AA-86328EBE8DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72275BAC-75C1-49DA-A1AA-86328EBE8DD5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{72275BAC-75C1-49DA-A1AA-86328EBE8DD5}.Debug|x86.Build.0 = Debug|Any CPU
+		{72275BAC-75C1-49DA-A1AA-86328EBE8DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72275BAC-75C1-49DA-A1AA-86328EBE8DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72275BAC-75C1-49DA-A1AA-86328EBE8DD5}.Release|x86.ActiveCfg = Release|Any CPU
+		{72275BAC-75C1-49DA-A1AA-86328EBE8DD5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

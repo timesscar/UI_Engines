@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <PackageId>EmptyKeys.UserInterface.MonoGame</PackageId>
     <Description>MonoGame Library for Empty Keys UI</Description>
     <Product>EmptyKeys.UserInterface.MonoGame</Product>

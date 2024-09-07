@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xenko.Audio;
+﻿using Stride.Audio;
 
 namespace EmptyKeys.UserInterface.Media
 {
-    public class XenkoSound : SoundBase
+    public class StrideSound : SoundBase
     {
         private Sound sound;
         private SoundInstance soundInstance;
@@ -54,7 +49,7 @@ namespace EmptyKeys.UserInterface.Media
         /// Initializes a new instance of the <see cref="SunBurnSound"/> class.
         /// </summary>
         /// <param name="nativeSound">The native sound.</param>
-        public XenkoSound(object nativeSound)
+        public StrideSound(object nativeSound)
             : base(nativeSound)
         {
             sound = nativeSound as Sound;

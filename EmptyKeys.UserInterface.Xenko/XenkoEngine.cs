@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EmptyKeys.UserInterface.Input;
+﻿using EmptyKeys.UserInterface.Input;
 using EmptyKeys.UserInterface.Media;
 using EmptyKeys.UserInterface.Renderers;
-using Xenko.Games;
-using Xenko.Rendering;
+using Stride.Games;
+using Stride.Rendering;
 
 namespace EmptyKeys.UserInterface
 {
     /// <summary>
-    /// Implements Xenko specific engine
+    /// Implements Stride specific engine
     /// </summary>
-    public class XenkoEngine : Engine
+    public class StrideEngine : Engine
     {
         private Renderer renderer;
-        private AudioDevice audioDevice = new XenkoAudioDevice();
-        private AssetManager assetManager = new XenkoAssetManager();
-        private InputDeviceBase inputDevice = new XenkoInputDevice();
+        private AudioDevice audioDevice = new StrideAudioDevice();
+        private AssetManager assetManager = new StrideAssetManager();
+        private InputDeviceBase inputDevice = new StrideInputDevice();
 
         /// <summary>
         /// Gets the renderer.
@@ -66,15 +61,15 @@ namespace EmptyKeys.UserInterface
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="XenkoEngine"/> class.
+        /// Initializes a new instance of the <see cref="StrideEngine"/> class.
         /// </summary>
         /// <param name="graphicsDevice">The graphics device.</param>
         /// <param name="nativeScreenWidth">Width of the native screen.</param>
         /// <param name="nativeScreenHeight">Height of the native screen.</param>
-        public XenkoEngine(GraphicsDeviceManager manager, EffectSystem effectSystem)
+        public StrideEngine(GraphicsDeviceManager manager, EffectSystem effectSystem)
             : base()
         {
-            renderer = new XenkoRenderer(manager, effectSystem);
+            renderer = new StrideRenderer(manager, effectSystem);
         }        
     }
 }

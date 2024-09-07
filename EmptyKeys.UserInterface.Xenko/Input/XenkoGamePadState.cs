@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Xenko.Input;
+﻿using Stride.Input;
 
 namespace EmptyKeys.UserInterface.Input
 {
     /// <summary>
-    /// Implements Xenko engine specific game pad state
+    /// Implements Stride engine specific game pad state
     /// </summary>
-    public class XenkoGamePadState : GamePadStateBase
+    public class StrideGamePadState : GamePadStateBase
     {
         private GamePadState state;
 
@@ -203,7 +199,7 @@ namespace EmptyKeys.UserInterface.Input
         /// <param name="gamePadIndex">Index of the game pad.</param>
         public override void Update(int gamePadIndex)
         {
-            var input = XenkoInputDevice.NativeInputManager;
+            var input = StrideInputDevice.NativeInputManager;
             if (input.HasGamePad)
             {
                 state = input.DefaultGamePad.State;                               
